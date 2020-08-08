@@ -82,10 +82,18 @@ function turn() {
     console.log("---new turn---")
     console.log(`player one has    ${playerOne.length}    cards`)
     console.log(`player two has    ${playerTwo.length}    cards`)
+
+    if (playerOne.length === 0) {
+        console.log("player 2 wins")
+    } else if (playerTwo.length === 0) {
+        console.log("player 1 wins")
+    }
 }
 
 const maxTurns = 2500000;
 for (let i = 0; i < maxTurns; i++) {
-        turn()
+    console.log(i)
+    turn()
 }
 // how do i avoid so many arrays within arrays
+// nearly infinite game sometimes. instead of shuffling i adjusted the order of winning cards for one player
