@@ -75,10 +75,19 @@ function turn() {
     } else if (playerOneCard[0][0].number[0] < playerTwoCard[0][0].number[0]) {
         playerTwo.unshift(playerOneCard[0], playerTwoCard[0])
     } else {
+        if (playerOne.length < 2) {
+            console.log("player two wins the war")
+            playerTwo.unshift(playerOneCard[0], playerTwoCard[0])
+        } else if (playerTwo.length < 2) {
+            console.log("player one wins the war")
+            playerOne.unshift(playerTwoCard[0], playerOneCard[0])
+        } else {
         winnerPile.unshift(playerOneCard[0], playerTwoCard[0])
         console.log("war")
         war()
+        }
     }
+
     console.log("---new turn---")
     console.log(`player one has    ${playerOne.length}    cards`)
     console.log(`player two has    ${playerTwo.length}    cards`)
@@ -90,10 +99,12 @@ function turn() {
     }
 }
 
-const maxTurns = 2500000;
-for (let i = 0; i < maxTurns; i++) {
-    console.log(i)
+let count = 0
+while (playerOne.length !== 0 && playerTwo.length !== 0) {
     turn()
+    count = count+1
+    console.log(count)
 }
+
 // how do i avoid so many arrays within arrays
 // nearly infinite game sometimes. instead of shuffling i adjusted the order of winning cards for one player
