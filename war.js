@@ -14,7 +14,7 @@ class Deck {
         this.player2recycle = []
         let suit = ["Clubs","Diamonds","Hearts","Spades"]
         let number = [1,2,3,4,5,6,7,8,9,10,11,12,13]
-        let rank = ["two", "three", "four", "five","six","seven","eight","nine","ten","Jack","Queen","King","Ace"]
+        let rank = ["Two", "Three", "Four", "Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King","Ace"]
 
         for (let i of suit) {
             for (let j of number) {
@@ -94,13 +94,13 @@ function turn() {
         }
     }
 
-    console.log("---------------------")
+    console.log("----------------------------------------------------")
     console.log(`player one plays the ${playerOneCard[0][0].rank} of ${playerOneCard[0][0].suit[0]}`)
     console.log(`player two plays the ${playerTwoCard[0][0].rank} of ${playerTwoCard[0][0].suit[0]}`)
     console.log(`${winner} wins this hand!`)
     console.log(`player one now has    ${playerOne.length}    cards`)
     console.log(`player two now has    ${playerTwo.length}    cards`)
-    console.log("---------------------")
+    console.log("----------------------------------------------------")
 
     if (playerOne.length === 0) {
         console.log("player 2 wins the game!!!")
@@ -118,3 +118,4 @@ while (playerOne.length !== 0 && playerTwo.length !== 0) {
 
 // how do i avoid so many arrays within arrays
 // nearly infinite game sometimes. instead of shuffling i adjusted the order of winning cards for one player
+// get an error if it ends with double war bc i havent dealt with that yet
