@@ -65,18 +65,18 @@ function turn() {
             playerTwo = winnerPile.concat(playerTwo)
         } else {
             winnerPile.unshift(playerOneWarCard[0], playerTwoWarCard[0])
-            console.log("vvvv")
+            console.log("multiwar")
             war()
         }
     }
 
     if (playerOneCard[0][0].number[0] > playerTwoCard[0][0].number[0]) {
-        playerOne.unshift(playerOneCard[0], playerTwoCard[0])
+        playerOne.unshift(playerTwoCard[0], playerOneCard[0])
     } else if (playerOneCard[0][0].number[0] < playerTwoCard[0][0].number[0]) {
         playerTwo.unshift(playerOneCard[0], playerTwoCard[0])
     } else {
         winnerPile.unshift(playerOneCard[0], playerTwoCard[0])
-        console.log("fffff")
+        console.log("war")
         war()
     }
     console.log("---new turn---")
