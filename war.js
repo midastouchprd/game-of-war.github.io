@@ -68,9 +68,19 @@ function turn() {
             playerTwo = winnerPile.concat(playerTwo)
             winner = "player two"
         } else {
+            if (playerOne.length < 2) {
+                console.log("player two wins the multiwar")
+                winnerPile.unshift(playerOneWarCard[0], playerTwoWarCard[0])
+                playerOne = winnerPile.concat(playerOne)
+            } else if (playerTwo.length < 2) {
+                console.log("player one wins the multiwar")
+                winnerPile.unshift(playerOneWarCard[0], playerTwoWarCard[0])
+                playerTwo = winnerPile.concat(playerTwo)
+            } else {
             winnerPile.unshift(playerOneWarCard[0], playerTwoWarCard[0])
             console.log("multiwar!!!!!!!!")
             war()
+            }
         }
     }
 
@@ -118,4 +128,3 @@ while (playerOne.length !== 0 && playerTwo.length !== 0) {
 
 // how do i avoid so many arrays within arrays
 // nearly infinite game sometimes. instead of shuffling i adjusted the order of winning cards for one player
-// get an error if it ends with double war bc i havent dealt with that yet
