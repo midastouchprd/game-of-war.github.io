@@ -12,9 +12,9 @@ class Deck {
         this.cards = []
         this.player1recycle = []
         this.player2recycle = []
-        let suit = ["clubs","diamonds","hearts","spades"]
+        let suit = ["Clubs","Diamonds","Hearts","Spades"]
         let number = [1,2,3,4,5,6,7,8,9,10,11,12,13]
-        let rank = ["2", "3", "4", "5","6","7","8","9","10","Jack","Queen","King","Ace"]
+        let rank = ["two", "three", "four", "five","six","seven","eight","nine","ten","Jack","Queen","King","Ace"]
 
         for (let i of suit) {
             for (let j of number) {
@@ -47,6 +47,7 @@ function turn() {
     playerTwoCard = playerTwo.splice([playerTwo.length-1], 1)
 
     let winnerPile = []
+    let winner = null
 
     function war() {
         playerOneDownCard = playerOne.splice([playerOne.length-1], 1)
@@ -57,23 +58,28 @@ function turn() {
 
         playerOneWarCard = playerOne.splice([playerOne.length-1], 1)
         playerTwoWarCard = playerTwo.splice([playerTwo.length-1], 1)
+
         if (playerOneWarCard[0][0].number[0] > playerTwoWarCard[0][0].number[0]) {
             winnerPile.unshift(playerOneWarCard[0], playerTwoWarCard[0])
             playerOne = winnerPile.concat(playerOne)
+            winner = "player one"
         } else if (playerOneWarCard[0][0].number[0] < playerTwoWarCard[0][0].number[0]) {
             winnerPile.unshift(playerOneWarCard[0], playerTwoWarCard[0])
             playerTwo = winnerPile.concat(playerTwo)
+            winner = "player two"
         } else {
             winnerPile.unshift(playerOneWarCard[0], playerTwoWarCard[0])
-            console.log("multiwar")
+            console.log("multiwar!!!!!!!!")
             war()
         }
     }
 
     if (playerOneCard[0][0].number[0] > playerTwoCard[0][0].number[0]) {
+        winner = "player one"
         playerOne.unshift(playerTwoCard[0], playerOneCard[0])
     } else if (playerOneCard[0][0].number[0] < playerTwoCard[0][0].number[0]) {
         playerTwo.unshift(playerOneCard[0], playerTwoCard[0])
+        winner = "player two"
     } else {
         if (playerOne.length < 2) {
             console.log("player two wins the war")
@@ -88,14 +94,18 @@ function turn() {
         }
     }
 
-    console.log("---new turn---")
-    console.log(`player one has    ${playerOne.length}    cards`)
-    console.log(`player two has    ${playerTwo.length}    cards`)
+    console.log("---------------------")
+    console.log(`player one plays the ${playerOneCard[0][0].rank} of ${playerOneCard[0][0].suit[0]}`)
+    console.log(`player two plays the ${playerTwoCard[0][0].rank} of ${playerTwoCard[0][0].suit[0]}`)
+    console.log(`${winner} wins this hand!`)
+    console.log(`player one now has    ${playerOne.length}    cards`)
+    console.log(`player two now has    ${playerTwo.length}    cards`)
+    console.log("---------------------")
 
     if (playerOne.length === 0) {
-        console.log("player 2 wins")
+        console.log("player 2 wins the game!!!")
     } else if (playerTwo.length === 0) {
-        console.log("player 1 wins")
+        console.log("player 1 wins the game!!!")
     }
 }
 
