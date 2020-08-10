@@ -60,7 +60,7 @@ function turn() {
         playerTwoWarCard = playerTwo.splice([playerTwo.length-1], 1)
 
         if (playerOneWarCard[0][0].number[0] > playerTwoWarCard[0][0].number[0]) {
-            winnerPile.unshift(playerOneWarCard[0], playerTwoWarCard[0])
+            winnerPile.unshift(playerTwoWarCard[0], playerOneWarCard[0])
             playerOne = winnerPile.concat(playerOne)
             winner = "player one"
         } else if (playerOneWarCard[0][0].number[0] < playerTwoWarCard[0][0].number[0]) {
@@ -70,7 +70,7 @@ function turn() {
         } else {
             if (playerOne.length < 2) {
                 console.log("player two wins the multiwar")
-                winnerPile.unshift(playerOneWarCard[0], playerTwoWarCard[0])
+                winnerPile.unshift(playerTwoWarCard[0], playerOneWarCard[0])
                 playerOne = winnerPile.concat(playerOne)
             } else if (playerTwo.length < 2) {
                 console.log("player one wins the multiwar")

@@ -1,14 +1,3 @@
-
-/** else {
-    playerOneTieCards = playerOne.splice([playerOne.length-2], 2)
-    playerTwoTieCards = playerTwo.splice([playerTwo.length-2], 2)
-    if (playerOneTieCards[1][0].number > playerTwoTieCards[1][0].number) {
-        playerOne.unshift(playerOneTieCards[0], playerOneTieCards[1], 
-        playerTwoTieCards[0], playerTwoTieCards[1], playerOneCard[0], playerTwoCard[0])
-    } else if (playerOneTieCards[1][0].number < playerTwoTieCards[1][0].number) {
-        playerTwo.unshift(playerOneTieCards[0], playerOneTieCards[1], 
-        playerTwoTieCards[0], playerTwoTieCards[1], playerOneCard[0], playerTwoCard[0])
-    } else {
-
-    }
-*/
+h2 {
+    color: rgb(77, 77, 77);
+}
