@@ -1,37 +1,20 @@
-# game-of-war
+# The Game of War
 deployed URL: https://tmurphy3.github.io/game-of-war.github.io/
 
-One Paragraph of project description goes here
+Two players start the game by splitting a deck of 52 standard playing cards evenly. Each stack is facedown, and players cannot look at the cards in their stack or rearrange them. The objective of the game is to gather all 52 cards by taking them from your opponent.
 
-## Getting Started
+## Rules
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+-Randomly assign 26 cards to each player
+-Each player turns one of their cards face-up, the person with the higher value wins and puts both cards on the bottom of their deck in a random order
+If the players have cards of the same value War is declared. The players put the top card of their deck face-down and then turn the next card of their deck face-up. The player with the higher card takes all 6 cards. If the players turn over cards of the same value, War is declared again and the process continues until one player wins.
+If a player has fewer than three cards remaining in their deck and War is declared, they use the last card in their deck for the purpose of determining the winner
+A player wins if they have all 52 cards in their deck
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+-Javascript
+-Object Oriented Programming
 
 ## Running the tests
 
